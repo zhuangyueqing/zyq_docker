@@ -1,7 +1,8 @@
-FROM pai.build.base:hadoop2.7.2-cuda8.0-cudnn6-devel-ubuntu16.04
+FROM openpai/pai.example.tensorflow:stable 
 
 MAINTAINER Yueqing Zhuang "https://github.com/zhuangyueqing"
 
+RUN rm /etc/apt/sources.list.d/cuda.list && rm /etc/apt/sources.list.d/nvidia-ml.list
 RUN apt-get update
 RUN apt-get -y install sudo
 RUN apt-get install -y openssh-server
